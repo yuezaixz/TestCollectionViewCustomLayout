@@ -9,12 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    @IBOutlet weak var testLayout: UICollectionViewFlowLayout!
 
     var collectionColors = [UIColor]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initCollectColors()
+        testLayout.sectionHeadersPinToVisibleBounds = true
     }
     
     func initCollectColors(){
@@ -49,9 +51,9 @@ class ViewController: UIViewController,UICollectionViewDelegate,UICollectionView
         if kind == UICollectionElementKindSectionHeader {
             reusableview = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "TestCollectionHeader", forIndexPath: indexPath)
             let label = UILabel.init()
-            label.text = "这是第\(indexPath.row)行"
+            label.text = "这是第\(indexPath.section+1)个集合"
             label.textColor = UIColor.whiteColor()
-            label.frame = CGRectMake(10, 20, 100, 15)
+            label.frame = CGRectMake(10, 20, 150, 15)
             reusableview.addSubview(label)
         }
         return reusableview

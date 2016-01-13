@@ -55,6 +55,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9Dk-g6-ZIw" secondAttribute="bottom" id="vCO-Wt-Uqd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="testLayout" destination="jc8-ez-skv" id="hb9-dS-R3k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
